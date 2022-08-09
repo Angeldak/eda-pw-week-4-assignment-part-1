@@ -94,17 +94,37 @@ console.log("Testing pizza in array [spain, england, norway, russia, pizza, ital
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  if (string[0] === letter) {
+    return true;
+  } else {
+    return false;
+  }
 }
 console.log('isFirstLetter - should say true', isFirstLetter('a', 'apple'));
 console.log('isFirstLetter - should say false', isFirstLetter('z', 'apple'));
 
+//V2 non-case sensitive
+function isFirstLetterAnyCase(letter, string) {
+  if (string[0].toLowercase === letter.toLowercase) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log('isFirstLetter - should say true', isFirstLetterAnyCase('A', 'apple'));
+console.log('isFirstLetter - should say true also', isFirstLetterAnyCase('z', 'Zebra'));
+
 // 9. Function to return the sum of all numbers in an array
-function sumAll() {
+function sumAll(array) {
   let sum = 0
   // TODO: loop to add items
+  for (items of array) {
+    sum = sum + items;
+  }
   return sum;
 }
+console.log("Should return 6", sumAll([1, 2, 3]));
+console.log("Should return 1000", sumAll([10, 20, 30, 40, 900]));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
