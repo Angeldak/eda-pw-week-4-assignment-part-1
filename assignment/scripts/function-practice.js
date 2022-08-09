@@ -129,8 +129,20 @@ console.log("Should return 1000", sumAll([10, 20, 30, 40, 900]));
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-
-
+function positiveArrayNumbers(array) {
+  let checkArray = [];
+  for (items of array) {
+    if (items > 0) {
+      checkArray.push(items);
+    }
+  }
+  return checkArray;
+} //end positiveArrayNumbers
+let testArray = [33, -234, 0, 2345, 23, -234, -34, .4, -.5, 0.3];
+console.log("Check array -3 -2 -1 0 1 2 3: Should return 1 2 3", positiveArrayNumbers([-3, -2, -1, 0, 1, 2, 3]));
+console.log("Check array -30 22 -10 0 11 -20 33: Should return 22 11 33", positiveArrayNumbers([-30, 22, -10, 0, 11, -20, 33]));
+console.log("Check array -3 -2 -1 0 -1 -2 -3: Should return empty array", positiveArrayNumbers([-3, -2, -1, 0, -1, -2, -3]));
+console.log("Checking testArray", positiveArrayNumbers(testArray));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
