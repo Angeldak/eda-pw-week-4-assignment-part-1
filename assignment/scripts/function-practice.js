@@ -147,3 +147,41 @@ console.log("Checking testArray", positiveArrayNumbers(testArray));
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+//Description from a "Hard" Edabit: Create a function that takes an array of strings and returns an array 
+//with only the strings that have numbers in them. If there are no strings containing numbers, return an empty array.
+//While i'm sure there are more efficient ways to solve this (such as with RegEx, which I just learned about.) I solved this with two functions.
+//One function is built to search a string for numbers and return true if it finds one.  The other loops though the array and runs the search 
+//function on each string in the array.  Since we are in the function section this seems like a great option.  I do believe I could get this all
+//into one function with some refactoring!
+
+function findNumber(arr) {
+  let counter = 0;
+  for (item of arr) {
+    if (!isNaN(parseInt(item))) {
+      counter++;
+    }
+  }
+  if (counter > 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function numInStr(arr) {
+  let newArray = [];
+  for (i of arr) {
+    if (findNumber(i)) {
+      newArray.push(i)
+    }
+  }
+  return newArray;
+}
+
+let numArray1 = ["1a", "2b", "c", "d", "e3"];
+let numArray2 = ["a", "b", "c", "d"];
+let numArray3 = [];
+
+console.log("numArray1 should return: 1a,2b,e3 in an array", numInStr(numArray1));
+console.log("numArray2 should return: an empty array", numInStr(numArray2));
+console.log("numArray3 should return: an empty array also", numInStr(numArray3));
