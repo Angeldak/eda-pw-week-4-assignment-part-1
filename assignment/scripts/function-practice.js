@@ -63,9 +63,9 @@ function getLast(array) {
     return undefined;
   }
 }
-console.log("Testing array [1,2,3]", getLast([1, 2, 3]));
-console.log("Testing array [yes, no, maybe-so]", getLast(["yes", "no", "maybe-so"]));
-console.log("Testing empty array []", getLast([]));
+console.log("Testing array [1,2,3], expect 3:", getLast([1, 2, 3]));
+console.log("Testing array [yes, no, maybe-so], expect maybe-so:", getLast(["yes", "no", "maybe-so"]));
+console.log("Testing empty array []; expect undefined:", getLast([]));
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
@@ -83,9 +83,9 @@ function find(value, array) {
     return false;
   }
 }
-console.log("Testing number 2 in array [1,2,3]", find(2, [1, 2, 3]));
-console.log("Testing pizza in array [yes, no, maybe-so]", find("pizza", ["yes", "no", "maybe-so"]));
-console.log("Testing pizza in array [spain, england, norway, russia, pizza, italy, france]", find("pizza", ["spain", "england", "norway", "russia", "pizza", "italy", "france"]));
+console.log("Testing number 2 in array [1,2,3], expect true:", find(2, [1, 2, 3]));
+console.log("Testing pizza in array [yes, no, maybe-so], expect false:", find("pizza", ["yes", "no", "maybe-so"]));
+console.log("Testing pizza in array [spain, england, norway, russia, pizza, italy, france], expect true:", find("pizza", ["spain", "england", "norway", "russia", "pizza", "italy", "france"]));
 
 
 // ----------------------
@@ -119,7 +119,7 @@ function sumAll(array) {
   let sum = 0
   // TODO: loop to add items
   for (items of array) {
-    sum = sum + items;
+    sum += items;
   }
   return sum;
 }
@@ -142,6 +142,7 @@ let testArray = [33, -234, 0, 2345, 23, -234, -34, .4, -.5, 0.3];
 console.log("Check array -3 -2 -1 0 1 2 3: Should return 1 2 3", positiveArrayNumbers([-3, -2, -1, 0, 1, 2, 3]));
 console.log("Check array -30 22 -10 0 11 -20 33: Should return 22 11 33", positiveArrayNumbers([-30, 22, -10, 0, 11, -20, 33]));
 console.log("Check array -3 -2 -1 0 -1 -2 -3: Should return empty array", positiveArrayNumbers([-3, -2, -1, 0, -1, -2, -3]));
+console.log("Test array:", testArray);
 console.log("Checking testArray", positiveArrayNumbers(testArray));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
